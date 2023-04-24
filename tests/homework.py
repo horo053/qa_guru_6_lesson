@@ -53,12 +53,15 @@ def test_find_suitable_user():
         {"name": "Maria", "age": 18},
     ]
 
+    # Решение найдено на https://www.delftstack.com/ru/howto/python/python-search-list-of-dictionaries/
+
     # TODO найдите пользователя с именем "Olga"
-    suitable_users = None
+    suitable_users = ([key for key in users if key['name'] == 'Olga'][0])
     assert suitable_users == {"name": "Olga", "age": 45}
 
+
     # TODO найдите всех пользователей младше 20 лет
-    suitable_users = None
+    suitable_users = ([key for key in users if key['age'] < 20])
     assert suitable_users == [
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
